@@ -13,21 +13,19 @@ export default function Movies() {
 
   useEffect(() => {
     const fetchMoviesData = async () => {
-      try {
-        const response = await axios.get(
+      await axios
+        .get(
           `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.NEXT_PUBLIC_MOVIE_API}&language=en-US&page=1`,
           {
             headers: {
               Authorization: `Bearer ${process.env.NEXT_PUBLIC_MOVIE_ACCESS_TOKEN}`,
             },
           }
-        );
-        const data = response.data;
-        console.log(data);
-        setMoviesData(data.results);
-      } catch (error) {
-        console.error("Error fetching movies data:", error);
-      }
+        )
+        .then((res) => {
+          const data = res.data;
+          setMoviesData(data.results);
+        });
     };
 
     fetchMoviesData();

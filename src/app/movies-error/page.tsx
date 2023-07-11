@@ -20,7 +20,6 @@ export default function MoviesError() {
         )
         .then((res) => {
           const data = res.data;
-          console.log(data);
           setMoviesData(data.results);
         })
         .catch((res) => {

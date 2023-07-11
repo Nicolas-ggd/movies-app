@@ -26,7 +26,6 @@ export default function MoviesLoading() {
         )
         .then((res) => {
           const data = res.data;
-          console.log(data);
           setMoviesData(data.results);
         });
     };
