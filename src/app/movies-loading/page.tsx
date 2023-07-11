@@ -12,6 +12,7 @@ interface Movie {
 
 export default function MoviesLoading() {
   const [moviesData, setMoviesData] = useState<Movie[]>([]);
+  const [isLoading, setIsLoading] = useState<Boolean>(true);
 
   useEffect(() => {
     const fetchMoviesData = async () => {
@@ -33,6 +34,7 @@ export default function MoviesLoading() {
     const delay = 3000;
 
     const timer = setTimeout(() => {
+      setIsLoading(false);
       fetchMoviesData();
     }, delay);
 
@@ -44,7 +46,7 @@ export default function MoviesLoading() {
       <div className="w-full h-full">
         <div className="p-20 w-full">
           <div className="grid flow-column w-full justify-center items-center">
-            {moviesData && (
+            {!isLoading && moviesData && (
               <Link
                 href="/"
                 className="text-white bg-green-700 hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
@@ -52,7 +54,7 @@ export default function MoviesLoading() {
                 Back to home
               </Link>
             )}
-            {moviesData &&
+            {!isLoading && moviesData &&
               moviesData?.map((item, index) => {
                 return (
                   <div
@@ -79,7 +81,7 @@ export default function MoviesLoading() {
                   </div>
                 );
               })}
-            {!moviesData && (
+            {isLoading && (
               <div role="status" style={{ marginTop: "20rem" }}>
                 <svg
                   aria-hidden="true"
