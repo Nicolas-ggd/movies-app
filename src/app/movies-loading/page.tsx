@@ -20,7 +20,7 @@ export default function MoviesLoading() {
           `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.NEXT_PUBLIC_MOVIE_API}&language=en-US&page=1`,
           {
             headers: {
-              Authorization: `Bearer ${process.env.NEXT_PUBLIC_MOVIE_ACCESS_TOKEN}`,
+              Authorization: `Bearer ${process.env.NEXT_PUBLIC_NPM_TOKEN}`,
             },
           }
         )
