@@ -36,7 +36,7 @@ export default function MoviesError() {
         <div className="p-20 w-full">
           <div className="grid flow-column w-full justify-center items-center">
             <h1 className="text-lg font-bold">
-              Can't get movies list 😭 {isError} 😭
+              Can't get movies list {isError}
             </h1>
             <Link
               href="/"
