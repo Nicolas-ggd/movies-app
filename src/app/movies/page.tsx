@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Link from "next/link";
@@ -53,6 +53,9 @@ export default function Movies() {
                 >
                   <a href="#">
                     <Image
+                      width={0}
+                      height={0}
+                      style={{ width: "auto", height: "100%" }}
                       className="rounded-t-lg"
                       src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`}
                       alt=""

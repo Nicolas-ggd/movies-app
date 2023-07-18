@@ -55,7 +55,8 @@ export default function MoviesLoading() {
                 Back to home
               </Link>
             )}
-            {!isLoading && moviesData &&
+            {!isLoading &&
+              moviesData &&
               moviesData?.map((item, index) => {
                 return (
                   <div
@@ -64,6 +65,9 @@ export default function MoviesLoading() {
                   >
                     <a href="#">
                       <Image
+                        width={0}
+                        height={0}
+                        style={{ width: "auto", height: "100%" }}
                         className="rounded-t-lg"
                         src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`}
                         alt=""
