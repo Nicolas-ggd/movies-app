@@ -55,7 +55,7 @@ export default function Movies() {
                     <Image
                       width={0}
                       height={0}
-                      style={{ width: "auto", height: "100%" }}
+                      style={{ width: "100%", height: "100%" }}
                       className="rounded-t-lg"
                       src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`}
                       alt=""
