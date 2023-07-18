@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import { useState, useEffect } from "react";
 import axios from "axios";
+import Image from "next/image";
 
 interface Movie {
   backdrop_path: string;
@@ -62,7 +63,7 @@ export default function MoviesLoading() {
                     className="max-w-sm m-4 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
                   >
                     <a href="#">
-                      <img
+                      <Image
                         className="rounded-t-lg"
                         src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`}
                         alt=""
